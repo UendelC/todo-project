@@ -17,13 +17,12 @@ class TodoControllerTest extends TestCase
      */
     public function testItShowsAListOfTodos()
     {
-        Todo::factory(3)->create();
+        $todos = Todo::factory(3)->create();
 
         $this->getJson(route('todos.index'))
-            ->assertJsonStructure(
+            ->assertJson(
                 [
-                    'message',
-                    'todos',
+                    'data' => $todos->toArray(),
                 ]
             )
             ->assertStatus(200);
@@ -39,6 +38,11 @@ class TodoControllerTest extends TestCase
 
         $this->postJson(route('todos.store'), $todo_payload)
             ->assertStatus(201)
-            ->assertJson($todo_payload);
+            ->assertJson(
+                [
+                    'message' => 'Todo criado com sucesso',
+                    'todo' => $todo_payload,
+                ]
+            );
     }
 }
