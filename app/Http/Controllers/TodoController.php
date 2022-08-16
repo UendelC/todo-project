@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTodosRequest;
 use App\Models\Todo;
-use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
@@ -20,9 +20,9 @@ class TodoController extends Controller
             );
     }
 
-    public function store(Request $request)
+    public function store(StoreTodosRequest $request)
     {
-        $todo = Todo::create($request->all());
+        $todo = Todo::create($request->validated());
 
         return response()
             ->json($todo, 201);
