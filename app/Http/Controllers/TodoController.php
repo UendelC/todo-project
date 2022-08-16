@@ -9,6 +9,15 @@ class TodoController extends Controller
 {
     public function index()
     {
+        $todos = Todo::all();
+
+        return response()
+            ->json(
+                [
+                    'message' => 'Todos retrieved successfully',
+                    'todos' => $todos,
+                ]
+            );
     }
 
     public function store(Request $request)
@@ -16,11 +25,6 @@ class TodoController extends Controller
         $todo = Todo::create($request->all());
 
         return response()
-            ->json(
-                [
-                    'message' => 'Todo created successfully',
-                    'todo' => $todo,
-                ]
-            );
+            ->json($todo, 201);
     }
 }

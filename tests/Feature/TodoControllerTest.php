@@ -20,8 +20,13 @@ class TodoControllerTest extends TestCase
         Todo::factory(3)->create();
 
         $this->getJson(route('todos.index'))
-            ->assertJsonCount(3)
-            ->assertStatusOk();
+            ->assertJsonStructure(
+                [
+                    'message',
+                    'todos',
+                ]
+            )
+            ->assertStatus(200);
 
     }
 
