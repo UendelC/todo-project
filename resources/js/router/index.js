@@ -1,4 +1,4 @@
-import TodoList from '../components/TodoList.vue';
+import TodoList from '../pages/TodoList.vue';
 
 export default [
     {
