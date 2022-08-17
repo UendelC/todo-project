@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Todo App</title>
 
-	@vite('resources/css/app.css')
+	@vite('resources/scss/app.scss')
 </head>
 <body>
 	<div id="app"></div>
