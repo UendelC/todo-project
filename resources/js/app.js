@@ -2,6 +2,7 @@ import './bootstrap';
 import routes from './router';
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import Cuida from '@sysvale/cuida';
 
 import App from './App.vue';
 
@@ -12,6 +13,7 @@ const router = createRouter({
     routes,
 });
 
+vueApp.use(Cuida);
 vueApp.use(router);
 
 vueApp.mount("#app");
