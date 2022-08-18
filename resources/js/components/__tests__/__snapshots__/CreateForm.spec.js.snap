@@ -232,8 +232,11 @@ VueWrapper {
       class="form__button"
     >
       <cds-button
+        text="Voltar"
+        variant="teal"
+      />
+      <cds-button
         disabled="true"
-        size="lg"
         text="Adicionar novo"
         variant="blue"
       />
