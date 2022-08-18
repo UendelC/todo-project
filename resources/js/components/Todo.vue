@@ -1,6 +1,8 @@
 <template>
     <div
         class="todo"
+        @click="$emit('click', item)"
+        :id="`todo-${item.id}`"
     >
         <div class="todo__title">
             {{ item.title }}
@@ -26,15 +28,15 @@ export default {
     padding: 30px;
     border: 1px solid $n-50;
     border-radius: $border-radius-large;
-    width: 250px;
     color: $n-800;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    min-width: 50vw;
 
     &:hover {
-        color: $n-500;
-        background-color: $n-20;
+        color: $n-10;
+        background-color: $bn-200;
+        cursor: pointer;
     }
 
     &__title {
