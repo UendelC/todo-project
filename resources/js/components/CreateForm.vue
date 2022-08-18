@@ -12,8 +12,12 @@
         />
         <div class="form__button">
             <cds-button
+                variant="teal"
+                text="Voltar"
+                @click="$emit('back')"
+            />
+            <cds-button
                 variant="blue"
-                size="lg"
                 text="Adicionar novo"
                 :disabled="disableButton"
                 @click="handleSubmit"
@@ -67,6 +71,9 @@ export default {
 
     &__button {
         margin: my(6);
+        display: flex;
+        justify-content: space-between;
+        max-width: 250px;
     }
 }
 </style>
