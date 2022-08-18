@@ -11,7 +11,7 @@
             class="input__content"
             :id="`input-${id}`"
             type="text"
-            @change="handleInputChange"
+            @input="handleInputChange"
         >
     </div>
 </template>
