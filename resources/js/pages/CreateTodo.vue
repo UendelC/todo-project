@@ -14,6 +14,7 @@
             <div class="form">
                 <create-form
                     @submit="handleSubmit($event, action)"
+                    @back="handleFormBack"
                 />
             </div>
         </div>
@@ -60,6 +61,10 @@ export default {
         successHandler() {
             console.log('deu certo');
         },
+
+        handleFormBack() {
+            this.$router.go(-1);
+        }
     }    
 }
 </script>
