@@ -12,7 +12,7 @@
             <div v-if="loading">
                 <cds-spinner
                     size="lg"
-                    variant="blue"
+                    variant="green"
                 />
             </div>
             <div v-else-if="failed || todoList.length === 0">
@@ -20,15 +20,15 @@
                     image="https://cdn-icons-png.flaticon.com/128/4076/4076419.png"
                     image-description="Imagem de empty state"
                     title="Não tem nada aqui ainda!"
-                    text="Para sair dessa situação de empty state, realize a ação abaixo"
-                    action-button-text="Adicionar novo"
+                    text="Para adicionar uma nova tarefa, utilize a opção abaixo."
+                    action-button-text="Adicionar nova tarefa"
                     @action-button-click="handleAdd"
                 />
             </div>
             <div v-else>
                 <div class="list__button">
                     <cds-button
-                        variant="blue"
+                        variant="green"
                         size="md"
                         text="Adicionar nova tarefa"
                         @click="handleAdd"
@@ -84,7 +84,7 @@ export default {
         },
 
         successHandler(response) {
-            this.todoList = JSON.parse(JSON.stringify(response)).data;
+            this.todoList = response.data;
         },
 
         handleTodoClick(todo) {

@@ -17,7 +17,7 @@
                 @click="$emit('back')"
             />
             <cds-button
-                variant="blue"
+                variant="green"
                 text="Adicionar novo"
                 :disabled="disableButton"
                 @click="handleSubmit"

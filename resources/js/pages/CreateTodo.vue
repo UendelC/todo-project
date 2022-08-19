@@ -59,7 +59,7 @@ export default {
         },
 
         successHandler() {
-            console.log('deu certo');
+            this.$router.push({ path: '/' });
         },
 
         handleFormBack() {
